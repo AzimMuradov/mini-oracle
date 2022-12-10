@@ -1,3 +1,5 @@
+import os
+
 import requests
 from flask import Flask, request
 
@@ -17,4 +19,4 @@ def get_answers():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
