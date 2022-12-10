@@ -29,6 +29,6 @@ def answer_question(question_type, question_content, session):
             'question': format_question_type(question_type).replace('_', title),
             'context': summary
         })['answer']
-        return {'title': title, 'answer': answer}
+        return {'title': title, 'answer': answer.capitalize()}
 
     return [get_answer(x['title'], x['summary']) for x in search_results]
