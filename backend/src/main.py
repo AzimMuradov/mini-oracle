@@ -12,13 +12,13 @@ session = requests.Session()
 
 @app.route("/answers")
 def get_answers():
-    question_type = request.args.get('question_type', default="", type=str)
-    question_content = request.args.get('question_content', default="", type=str)
-    # answers = answer_question(question_type, question_content, session)
-    return {'question_type': question_type, 'question_content': question_content}
-
-# model = AutoModelForQuestionAnswering.from_pretrained(model_name)
-# tokenizer = AutoTokenizer.from_pretrained(model_name)
+    try:
+        question_type = request.args.get('question_type', default="", type=str)
+        question_content = request.args.get('question_content', default="", type=str)
+        answers = answer_question(question_type, question_content, session)
+        return answers
+    except Exception as ex:
+        return str(ex)
 
 
 if __name__ == "__main__":
