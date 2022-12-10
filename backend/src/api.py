@@ -3,8 +3,8 @@ from transformers import pipeline, AutoModelForQuestionAnswering, AutoTokenizer
 from wiki_api import get_wiki_search_results
 
 model_name = "bert-large-uncased-whole-word-masking-finetuned-squad"
-model = AutoModelForQuestionAnswering.from_pretrained(model_name, local_files_only=True)
-tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
+model = AutoModelForQuestionAnswering.from_pretrained(model_name)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 question_types = ['smbdy', 'smthg']
 
