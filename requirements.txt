@@ -6,3 +6,4 @@ tensorflow
 torch
 wikipedia-api
 requests~=2.28.1
+flask

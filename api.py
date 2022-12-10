@@ -1,6 +1,6 @@
 from transformers import pipeline
 
-from wikipedia_api import get_wiki_stats
+from wiki_api import get_wiki_search_results
 
 model_name = "bert-large-uncased-whole-word-masking-finetuned-squad"
 
@@ -18,17 +18,17 @@ def format_question_type(question_type):
     return formatted_question_type
 
 
-def answer_question(content, question_type):
+def answer_question(question_type, question_content, session):
     # a) Get predictions
     nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
 
-    wiki_stats = get_wiki_stats(content)
+    search_results = get_wiki_search_results(question_content, session)
 
-    def transform_stat(title, context):
+    def get_answer(title, summary):
         answer = nlp({
-            'question': format_question_type(question_type).replace('_', content),
-            'context': context
+            'question': format_question_type(question_type).replace('_', title),
+            'context': summary
         })['answer']
-        return title, answer
+        return {'title': title, 'answer': answer}
 
-    return [transform_stat(x[0], x[1]) for x in wiki_stats]
+    return [get_answer(x['title'], x['summary']) for x in search_results]
