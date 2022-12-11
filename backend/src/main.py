@@ -1,8 +1,6 @@
 import os
-
 import requests
 from flask import Flask, request
-
 from api import answer_question
 
 app = Flask(__name__)

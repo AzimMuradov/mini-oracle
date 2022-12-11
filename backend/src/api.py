@@ -1,7 +1,5 @@
 import os
-
 import requests
-
 from wiki_api import get_wiki_search_results
 
 
