@@ -25,6 +25,8 @@ with st.form("main_form"):
     q_type = st.selectbox(
         "Type of the question", question_types, format_func=format_question_type
     )
+    if not q_type:
+        raise RuntimeError("Streamlit error")
     q_content = st.text_input(
         "Question content", max_chars=50, placeholder="Machine learning"
     )
