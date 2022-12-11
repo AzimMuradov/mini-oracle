@@ -32,7 +32,7 @@ with st.form("main_form"):
     if submitted:
         answers = session.get(url=url, params=params).json()
         if isinstance(answers, list):
-            for line in [format_res(x['title'], x['answer']) for x in answers.json()]:
+            for line in [format_res(x['title'], x['answer']) for x in answers]:
                 st.text(line)
         else:
             st.text(answers['error'])

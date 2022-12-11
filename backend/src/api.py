@@ -18,7 +18,7 @@ def answer_question(question_type, question_content, session):
         })
         if not isinstance(answer, dict) or 'answer' not in answer:
             raise RuntimeError(answer)
-        return {'title': title, 'answer': answer.capitalize()}
+        return {'title': title, 'answer': answer['answer'].capitalize()}
 
     return [get_answer(x['title'], x['summary']) for x in search_results]
 

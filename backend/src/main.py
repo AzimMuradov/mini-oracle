@@ -13,8 +13,7 @@ def get_answers():
     try:
         question_type = request.args.get('question_type', default="", type=str)
         question_content = request.args.get('question_content', default="", type=str)
-        answers = answer_question(question_type, question_content, session)
-        return answers
+        return answer_question(question_type, question_content, session)
     except Exception as ex:
         return {'error': f'Error: {ex}'}
 
