@@ -3,7 +3,6 @@ import wikipediaapi
 
 def get_wiki_search_results(query, session):
     url = "https://en.wikipedia.org/w/api.php"
-
     params = {
         "action": "opensearch",
         "namespace": "0",
