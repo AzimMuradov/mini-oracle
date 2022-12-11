@@ -1,22 +1,16 @@
 import requests
 import streamlit as st
-from transformers import AutoModelForQuestionAnswering, AutoTokenizer
-
-model_name = "bert-large-uncased-whole-word-masking-finetuned-squad"
-
-model = AutoModelForQuestionAnswering.from_pretrained(model_name)
-tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 session = requests.Session()
 
-question_types = ['smbdy', 'smthg']
+question_types = ['somebody', 'something']
 
 
 def format_question_type(question_type):
     match question_type:
-        case 'smbdy':
+        case 'somebody':
             formatted_question_type = 'Who is _?'
-        case 'smthg':
+        case 'something':
             formatted_question_type = 'What is _?'
         case _:
             formatted_question_type = 'What is _?'
@@ -32,10 +26,13 @@ with st.form("main_form"):
     q_content = st.text_input("Question content", max_chars=50, placeholder="Machine learning")
     submitted = st.form_submit_button("Submit")
 
-    url = "https://mini-oracle-production.up.railway.app/"
+    url = "https://mini-oracle.up.railway.app/answers"
     params = {"question_type": q_type, "question_content": q_content}
 
     if submitted:
         answers = session.get(url=url, params=params).json()
-        for line in [format_res(x['title'], x['answer']) for x in answers]:
-            st.text(line)
+        if isinstance(answers, list):
+            for line in [format_res(x['title'], x['answer']) for x in answers.json()]:
+                st.text(line)
+        else:
+            st.text(answers['error'])

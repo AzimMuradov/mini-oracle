@@ -22,9 +22,9 @@ def get_wiki_search_results(query, session):
     data = session.get(url=url, params=params, headers=headers).json()
 
     if isinstance(data, dict) and 'error' in data:
-        raise ValueError(data['error'])
+        raise RuntimeError(data['error'])
 
     titles = data[1]
     wiki = wikipediaapi.Wikipedia('en', headers=headers)
     pages = [wiki.page(x) for x in titles]
-    return [{'title': x.title, 'summary': x.summary[0:200]} for x in pages]
+    return [{'title': x.title, 'summary': x.summary[0:300]} for x in pages]

@@ -4,13 +4,20 @@ from wiki_api import get_wiki_search_results
 
 
 def answer_question(question_type, question_content, session):
-    search_results = get_wiki_search_results(question_content, session)
+    try:
+        search_results = get_wiki_search_results(question_content, session)
+    except ValueError as ex:
+        return RuntimeError(f"Illegal arguments: {ex}")
+    except Exception as ex:
+        return RuntimeError(f"Wikipedia error: {ex}")
 
     def get_answer(title, summary):
         answer = query({
             'question': format_question_type(question_type).replace('_', title),
             'context': summary
-        })['answer']
+        })
+        if not isinstance(answer, dict) or 'answer' not in answer:
+            raise RuntimeError(answer)
         return {'title': title, 'answer': answer.capitalize()}
 
     return [get_answer(x['title'], x['summary']) for x in search_results]

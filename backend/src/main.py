@@ -16,7 +16,7 @@ def get_answers():
         answers = answer_question(question_type, question_content, session)
         return answers
     except Exception as ex:
-        return str(ex)
+        return {'error': f'Error: {ex}'}
 
 
 if __name__ == "__main__":
