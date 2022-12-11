@@ -3,10 +3,10 @@ name: Streamlit Frontend CI
 on:
   push:
     branches: [ master, dev ]
-    paths: ['frontend_streamlit/**']
+    paths: ['frontend-streamlit/**']
   pull_request:
     branches: [ master ]
-    paths: ['frontend_streamlit/**']
+    paths: ['frontend-streamlit/**']
   workflow_dispatch:
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: frontend_streamlit
+        working-directory: frontend-streamlit
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
@@ -33,8 +33,8 @@ jobs:
         run: |
           pip install mypy
           python -m pip install types-requests
-          mypy --ignore-missing-imports src
+          mypy --ignore-missing-imports frontend_streamlit/src
       - name: Run tests
         run: |
           pip install pytest
-          pytest test/test.py
+          pytest frontend_streamlit/test/test.py

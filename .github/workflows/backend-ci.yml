@@ -33,8 +33,8 @@ jobs:
         run: |
           pip install mypy
           python -m pip install types-requests
-          mypy --ignore-missing-imports src
+          mypy --ignore-missing-imports backend/src
       - name: Run tests
         run: |
           pip install pytest
-          pytest test/test.py
+          pytest backend/test/test.py
