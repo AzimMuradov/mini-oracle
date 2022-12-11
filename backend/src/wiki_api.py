@@ -1,3 +1,4 @@
+import os
 import wikipediaapi
 
 
@@ -10,16 +11,20 @@ def get_wiki_search_results(query, session):
         "limit": "3",
         "format": "json"
     }
+    headers = {
+        'Authorization': f"'Bearer {os.getenv('WIKI_BEARER_TOKEN')}'",
+        'User-Agent': f"'mini-oracle ({os.getenv('WIKI_EMAIL')})'"
+    }
 
     if not query:
         raise ValueError('empty query')
 
-    data = session.get(url=url, params=params).json()
+    data = session.get(url=url, params=params, headers=headers).json()
 
     if isinstance(data, dict) and 'error' in data:
         raise ValueError(data['error'])
 
     titles = data[1]
-    wiki = wikipediaapi.Wikipedia('en')
+    wiki = wikipediaapi.Wikipedia('en', headers=headers)
     pages = [wiki.page(x) for x in titles]
     return [{'title': x.title, 'summary': x.summary[0:200]} for x in pages]
