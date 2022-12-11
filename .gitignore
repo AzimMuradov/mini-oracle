@@ -4,31 +4,8 @@
 # VS Code
 .vscode/
 
-
 # Python
-__pycache__/
-
-# Flask
-instance/
-.webassets-cache
-
-# Environments
 .venv
-
-# Poetry local configuration file - https://python-poetry.org/docs/configuration/#local-configuration
-poetry.toml
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
+__pycache__/
+.mypy_cache/
 .pytest_cache/
-cover/
