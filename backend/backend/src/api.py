@@ -17,7 +17,7 @@ def answer_question(
     def get_answer(title: str, summary: str) -> dict[str, Any]:
         answer = query(
             {
-                "question": format_question_type(question_type).replace("_", title),
+                "question": format_question(question_type, title),
                 "context": summary,
             }
         )
@@ -28,15 +28,12 @@ def answer_question(
     return [get_answer(x["title"], x["summary"]) for x in search_results]
 
 
-def format_question_type(question_type: str) -> str:
-    match question_type:
-        case "somebody":
-            formatted_question_type = "Who is _?"
-        case "something":
-            formatted_question_type = "What is _?"
-        case _:
-            formatted_question_type = "What is _?"
-    return formatted_question_type
+def format_question(question_type: str, question_content: str) -> str:
+    return (
+        f"Who is {question_content}?"
+        if question_type == "somebody"
+        else f"What is {question_content}?"
+    )
 
 
 def query(payload: dict) -> dict | list:

@@ -1,5 +1,4 @@
 transformers
-tensorflow
 torch
 wikipedia-api
 requests
