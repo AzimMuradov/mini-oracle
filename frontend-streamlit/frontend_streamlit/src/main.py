@@ -7,14 +7,7 @@ question_types = ["somebody", "something"]
 
 
 def format_question_type(question_type: str) -> str:
-    match question_type:
-        case "somebody":
-            formatted_question_type = "Who is _?"
-        case "something":
-            formatted_question_type = "What is _?"
-        case _:
-            formatted_question_type = "What is _?"
-    return formatted_question_type
+    return "Who is _?" if question_type == "somebody" else "What is _?"
 
 
 def format_res(question_type: str, title: str, answer: str) -> str:
