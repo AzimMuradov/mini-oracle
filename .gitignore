@@ -1,11 +1,23 @@
 # JetBrains
+
 .idea/
 
+
 # VS Code
+
 .vscode/
 
+
 # Python
+
 .venv
 __pycache__/
 .mypy_cache/
 .pytest_cache/
+
+
+#Kotlin
+
+.gradle/
+build/
+
