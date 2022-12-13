@@ -18,7 +18,7 @@ def get_wiki_search_results(query: str, session: Session) -> list[dict[str, str]
     }
 
     if not query:
-        raise ValueError("empty query")
+        raise ValueError("Empty query")
 
     data = session.get(url=url, params=params, headers=headers).json()
 

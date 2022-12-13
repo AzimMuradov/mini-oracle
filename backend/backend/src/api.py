@@ -4,13 +4,11 @@ import requests as rq
 from backend.src.wiki_api import get_wiki_search_results
 
 
-def answer_question(
-    question_type: str, question_content: str, session: rq.Session
-) -> list[dict[str, Any]]:
+def answer_question(question_type: str, question_content: str, session: rq.Session) -> list[dict[str, Any]]:
     try:
         search_results = get_wiki_search_results(question_content, session)
     except ValueError as ex:
-        raise RuntimeError(f"Illegal arguments: {ex}")
+        raise RuntimeError(ex)
     except Exception as ex:
         raise RuntimeError(f"Wikipedia error: {ex}")
 
