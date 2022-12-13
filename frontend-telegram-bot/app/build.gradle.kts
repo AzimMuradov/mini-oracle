@@ -16,14 +16,25 @@ dependencies {
     // Use the Kotlin JDK 8 standard library.
     implementation(kotlin("stdlib-jdk8"))
 
+
     // Use the KotlinX Coroutines library.
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+
+    // Use the Ktor library.
+    implementation("io.ktor:ktor-client-core:2.2.1")
+
+    // Use the Ktor CIO engine.
+    implementation("io.ktor:ktor-client-cio:2.2.1")
+
+    // Use the Ktor plugins for serialization.
+    implementation("io.ktor:ktor-client-content-negotiation:2.2.1")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.2.1")
 
     // Use the Telegram bot API.
     implementation("io.github.kotlin-telegram-bot.kotlin-telegram-bot:telegram:6.0.7")
 
-    // Use the KotlinX Serialization library for JSON format.
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+
+    // Tests
 
     // Use the Kotlin test library.
     testImplementation(kotlin("test"))

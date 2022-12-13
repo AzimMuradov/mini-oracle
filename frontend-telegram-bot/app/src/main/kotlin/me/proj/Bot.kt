@@ -8,6 +8,7 @@ import com.github.kotlintelegrambot.dispatcher.handlers.CommandHandlerEnvironmen
 import com.github.kotlintelegrambot.entities.ChatId
 import com.github.kotlintelegrambot.entities.ParseMode
 import com.github.kotlintelegrambot.logging.LogLevel
+import kotlinx.coroutines.runBlocking
 import me.proj.QuestionType.SOMEBODY
 import me.proj.QuestionType.SOMETHING
 import me.proj.StringUtils.cmdArgTemplate
@@ -63,11 +64,13 @@ fun CommandHandlerEnvironment.sendFormattedMessage(text: String) {
 }
 
 fun Dispatcher.commandGetAnswers(qType: QuestionType, repository: Repository) = command(qType.cmdName) {
-    if (args.size == 1) {
-        repository.getAnswers(
-            questionType = qType,
-            questionContent = args.first()
-        ).fold(
+    val arg = args.joinToString(separator = " ").trim()
+    if (arg.isNotBlank()) {
+        val result = runBlocking {
+            repository.getAnswers(questionType = qType, questionContent = arg)
+        }
+
+        result.fold(
             onSuccess = { answers ->
                 if (answers.isNotEmpty()) {
                     for ((title, answer) in answers) {
