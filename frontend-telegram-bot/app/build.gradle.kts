@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm") version "1.7.20"
     kotlin("plugin.serialization") version "1.7.20"
+    id("com.github.johnrengelman.shadow") version "7.+"
     application
 }
 
@@ -45,7 +46,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("me.proj.AppKt")
+    mainClass.set("me.azimmuradov.minioracle.AppKt")
 }
 
 tasks {
@@ -54,12 +55,6 @@ tasks {
     }
 }
 
-// jar {
-//     manifest {
-//         attributes 'Main-Class': 'com.github.kotlintelegrambot.MainKt'
-//     }
-//
-//     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
-//
-//     duplicatesStrategy = DuplicatesStrategy.INCLUDE
-// }
+task("stage") {
+    dependsOn("shadowJar")
+}
