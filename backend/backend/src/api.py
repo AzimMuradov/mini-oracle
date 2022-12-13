@@ -27,11 +27,7 @@ def answer_question(question_type: str, question_content: str, session: rq.Sessi
 
 
 def format_question(question_type: str, question_content: str) -> str:
-    return (
-        f"Who is {question_content}?"
-        if question_type == "somebody"
-        else f"What is {question_content}?"
-    )
+    return f"Who is {question_content}?" if question_type == "somebody" else f"What is {question_content}?"
 
 
 def query(payload: dict) -> dict | list:

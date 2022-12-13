@@ -14,15 +14,11 @@ def test_format_question_type_else():
 
 
 def test_format_res_somebody():
-    assert "Who is Mr. Putin? -- censored" == format_res(
-        "somebody", "Mr. Putin", "censored"
-    )
+    assert "Who is Mr. Putin? -- censored" == format_res("somebody", "Mr. Putin", "censored")
 
 
 def test_format_res_something():
-    assert "What is Love? -- Oh baby, don't hurt me..." == format_res(
-        "something", "Love", "Oh baby, don't hurt me..."
-    )
+    assert "What is Love? -- Oh baby, don't hurt me..." == format_res("something", "Love", "Oh baby, don't hurt me...")
 
 
 def test_format_res_else():
