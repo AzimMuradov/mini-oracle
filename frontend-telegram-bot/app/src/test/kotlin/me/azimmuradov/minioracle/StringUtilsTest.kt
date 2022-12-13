@@ -72,7 +72,7 @@ internal class StringUtilsTest {
                      |Please try again\.\.\.
                      """.trimMargin(),
             "err!" to """
-                     |❌   err\!
+                     |❌   err!
                      |Please try again\.\.\.
                      """.trimMargin(),
         ).map { (a, b) -> arguments(a, b) }

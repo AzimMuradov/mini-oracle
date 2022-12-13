@@ -5,7 +5,7 @@ object StringUtils {
         """✅   _${qType.questionPrefix} ${title.escapeForTg()}?_ \-\- *${answer.escapeForTg()}*"""
 
     fun formatError(text: String) = """
-        |❌   ${text.escapeForTg()}
+        |❌   $text
         |Please try again\.\.\.
     """.trimMargin()
 

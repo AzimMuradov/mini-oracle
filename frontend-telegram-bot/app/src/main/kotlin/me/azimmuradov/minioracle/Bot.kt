@@ -13,6 +13,7 @@ import me.azimmuradov.minioracle.QuestionType.SOMEBODY
 import me.azimmuradov.minioracle.QuestionType.SOMETHING
 import me.azimmuradov.minioracle.StringUtils.cmdArgTemplate
 import me.azimmuradov.minioracle.StringUtils.cmdName
+import me.azimmuradov.minioracle.StringUtils.escapeForTg
 import me.azimmuradov.minioracle.StringUtils.formatAnswer
 import me.azimmuradov.minioracle.StringUtils.formatError
 import me.azimmuradov.minioracle.StringUtils.questionPrefix
@@ -81,14 +82,14 @@ fun Dispatcher.commandGetAnswers(qType: QuestionType, repository: Repository) = 
                 }
             },
             onFailure = { ex ->
-                sendFormattedMessage(formatError(text = ex.message ?: "Unexpected error"))
+                sendFormattedMessage(formatError(text = ex.message?.escapeForTg() ?: "Unexpected error"))
             }
         )
     } else {
         with(qType) {
             sendFormattedMessage(
                 formatError(
-                    text = """Wrong number of arguments, expected: `/${cmdName} ${cmdArgTemplate}`"""
+                    text = """Empty query, expected: `/${cmdName} ${cmdArgTemplate}`"""
                 )
             )
         }
