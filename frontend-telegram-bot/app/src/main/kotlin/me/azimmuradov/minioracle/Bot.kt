@@ -1,4 +1,4 @@
-package me.proj
+package me.azimmuradov.minioracle
 
 import com.github.kotlintelegrambot.bot
 import com.github.kotlintelegrambot.dispatch
@@ -9,13 +9,13 @@ import com.github.kotlintelegrambot.entities.ChatId
 import com.github.kotlintelegrambot.entities.ParseMode
 import com.github.kotlintelegrambot.logging.LogLevel
 import kotlinx.coroutines.runBlocking
-import me.proj.QuestionType.SOMEBODY
-import me.proj.QuestionType.SOMETHING
-import me.proj.StringUtils.cmdArgTemplate
-import me.proj.StringUtils.cmdName
-import me.proj.StringUtils.formatAnswer
-import me.proj.StringUtils.formatError
-import me.proj.StringUtils.questionPrefix
+import me.azimmuradov.minioracle.QuestionType.SOMEBODY
+import me.azimmuradov.minioracle.QuestionType.SOMETHING
+import me.azimmuradov.minioracle.StringUtils.cmdArgTemplate
+import me.azimmuradov.minioracle.StringUtils.cmdName
+import me.azimmuradov.minioracle.StringUtils.formatAnswer
+import me.azimmuradov.minioracle.StringUtils.formatError
+import me.azimmuradov.minioracle.StringUtils.questionPrefix
 
 fun newBot(token: String, repository: Repository) = bot {
     this.token = token

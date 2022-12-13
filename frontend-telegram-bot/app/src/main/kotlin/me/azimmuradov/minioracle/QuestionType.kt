@@ -1,4 +1,4 @@
-package me.proj
+package me.azimmuradov.minioracle
 
 enum class QuestionType {
     SOMEBODY,

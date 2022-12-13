@@ -1,10 +1,10 @@
-package me.proj
+package me.azimmuradov.minioracle
 
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
-import me.proj.StringUtils.cmdArgTemplate
+import me.azimmuradov.minioracle.StringUtils.cmdArgTemplate
 
 class Repository(private val client: HttpClient) {
     suspend fun getAnswers(

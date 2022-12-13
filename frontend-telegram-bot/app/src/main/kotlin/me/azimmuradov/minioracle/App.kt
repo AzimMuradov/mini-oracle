@@ -1,4 +1,4 @@
-package me.proj
+package me.azimmuradov.minioracle
 
 import io.ktor.client.*
 import io.ktor.client.engine.cio.*

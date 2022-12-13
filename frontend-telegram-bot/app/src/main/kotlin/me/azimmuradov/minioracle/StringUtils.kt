@@ -1,4 +1,4 @@
-package me.proj
+package me.azimmuradov.minioracle
 
 object StringUtils {
     fun formatAnswer(qType: QuestionType, title: String, answer: String) =

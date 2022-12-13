@@ -1,10 +1,10 @@
-package me.proj
+package me.azimmuradov.minioracle
 
-import me.proj.QuestionType.SOMEBODY
-import me.proj.QuestionType.SOMETHING
-import me.proj.StringUtils.escapeForTg
-import me.proj.StringUtils.formatAnswer
-import me.proj.StringUtils.formatError
+import me.azimmuradov.minioracle.QuestionType.SOMEBODY
+import me.azimmuradov.minioracle.QuestionType.SOMETHING
+import me.azimmuradov.minioracle.StringUtils.escapeForTg
+import me.azimmuradov.minioracle.StringUtils.formatAnswer
+import me.azimmuradov.minioracle.StringUtils.formatError
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.arguments
 import org.junit.jupiter.params.provider.MethodSource
