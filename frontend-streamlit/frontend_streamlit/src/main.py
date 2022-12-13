@@ -33,4 +33,4 @@ with st.form("main_form"):
                 for line in [format_res(q_type, x["title"], x["answer"]) for x in answers]:
                     st.text(f"✅   {line}")
         else:
-            st.text(f"❌   {answers['error']}")
+            st.text(f"❌   {answers['error']}. Please try again...")
