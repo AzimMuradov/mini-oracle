@@ -21,7 +21,7 @@ It's a full-stack machine-learning application:
 - frontends:
     - [streamlit](https://streamlit.io/) framework, you can use the application here
       \- [**mini-oracle.streamlit.app**](https://mini-oracle.streamlit.app/)
-    - [**telegram bot API**](https://core.telegram.org/bots/api), you can use the bot here
+    - [telegram bot API](https://core.telegram.org/bots/api), you can use the bot here
       \- [**@mini_oracle_bot**](https://t.me/mini_oracle_bot)
 
 ## How to use?
