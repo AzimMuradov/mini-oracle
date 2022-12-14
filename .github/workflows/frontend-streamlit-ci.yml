@@ -2,7 +2,7 @@ name: Streamlit Frontend CI
 
 on:
   push:
-    branches: [ master, dev ]
+    branches: [ master ]
     paths: ['frontend-streamlit/**']
   pull_request:
     branches: [ master ]

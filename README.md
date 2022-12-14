@@ -1,8 +1,8 @@
 # mini-oracle
 
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/AzimMuradov/mini-oracle/Backend%20CI/dev?label=build%20%7C%20backend)
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/AzimMuradov/mini-oracle/Streamlit%20Frontend%20CI/dev?label=build%20%7C%20streamlit%20frontend)
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/AzimMuradov/mini-oracle/Telegram%20Bot%20Frontend%20CI/dev?label=build%20%7C%20telegram%20bot%20frontend)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/AzimMuradov/mini-oracle/Backend%20CI/master?label=build%20%7C%20backend)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/AzimMuradov/mini-oracle/Streamlit%20Frontend%20CI/master?label=build%20%7C%20streamlit%20frontend)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/AzimMuradov/mini-oracle/Telegram%20Bot%20Frontend%20CI/master?label=build%20%7C%20telegram%20bot%20frontend)
 ![GitHub](https://img.shields.io/github/license/AzimMuradov/mini-oracle?color=blue)
 
 ![Railway](https://img.shields.io/badge/-Railway-white?message=Railway&logo=railway&logoColor=0B0D0E)
