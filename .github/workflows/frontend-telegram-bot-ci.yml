@@ -2,11 +2,11 @@ name: Telegram Bot Frontend CI
 
 on:
   push:
-    branches: [master, dev]
-    paths: ["frontend-telegram-bot/**"]
+    branches: [ master ]
+    paths: ['frontend-telegram-bot/**']
   pull_request:
-    branches: [master]
-    paths: ["frontend-telegram-bot/**"]
+    branches: [ master ]
+    paths: ['frontend-telegram-bot/**']
   workflow_dispatch:
 
 jobs:
