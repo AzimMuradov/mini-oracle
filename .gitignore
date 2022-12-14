@@ -1,8 +1,23 @@
-# Idea files
+# JetBrains
 
-.idea
+.idea/
 
 
-# Virtualenv files
+# VS Code
 
-venv
+.vscode/
+
+
+# Python
+
+.venv
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+
+
+#Kotlin
+
+.gradle/
+build/
+

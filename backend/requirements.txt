@@ -1,0 +1,6 @@
+transformers
+torch
+wikipedia-api
+requests
+flask
+gunicorn
