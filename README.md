@@ -14,17 +14,17 @@
 
 It's a full-stack machine-learning application:
 
-- for backend it uses **hugging-face**
-  [bert-large-uncased-whole-word-masking-finetuned-squad](https://huggingface.co/bert-large-uncased-whole-word-masking-finetuned-squad)
-  model combined with **wikipedia REST API**
-- for frontend it uses:
-    - [**streamlit**](https://streamlit.io/) framework, you can use the application here
-      \- [mini-oracle.streamlit.app](https://mini-oracle.streamlit.app/)
-    - [**telegram bot API**](https://core.telegram.org/bots/api), you use see the bot here
-      \- [@mini_oracle_bot](https://t.me/mini_oracle_bot)
+- backend:
+    - [hugging-face](https://huggingface.co/)
+      [bert-large-uncased-whole-word-masking-finetuned-squad](https://huggingface.co/bert-large-uncased-whole-word-masking-finetuned-squad)
+      model combined with wikipedia REST API
+- frontends:
+    - [streamlit](https://streamlit.io/) framework, you can use the application here
+      \- [**mini-oracle.streamlit.app**](https://mini-oracle.streamlit.app/)
+    - [**telegram bot API**](https://core.telegram.org/bots/api), you can use the bot here
+      \- [**@mini_oracle_bot**](https://t.me/mini_oracle_bot)
 
 ## How to use?
-
 
 ### Streamlit (web)
 
@@ -41,7 +41,6 @@ If you prefer a web interface, use the [streamlit application](https://mini-orac
 3. Press the *submit* button and get results:
 
 ![step 3](docs/streamlit-step-3.jpg)
-
 
 ### Telegram Bot
 
@@ -66,7 +65,7 @@ If you need any help, you can always execute the `/help` command:
 
 There are several types of the errors you may get:
 
-1. Empty query
+### Empty query
 
 ![streamlit - empty question content](docs/streamlit-empty-query.jpg)
 
@@ -74,9 +73,9 @@ There are several types of the errors you may get:
 
 **You should not leave the *question content* empty.**
 
-2. Other errors
+### Other errors
 
-This is the most certainly not your fault, you should probably wait (1-3 minutes) and try again.
+This is the most certainly not your fault, you should probably **wait (1-3 minutes) and try again**.
 If it doesn't help (even after several tries),
 you should [let me know](https://github.com/AzimMuradov/mini-oracle/issues).
 
@@ -111,4 +110,4 @@ you should [let me know](https://github.com/AzimMuradov/mini-oracle/issues).
    and set the token of your newly created bot to the `TELEGRAM_BOT_TOKEN` environment variable.
 2. Go to `frontend-telegram-bot` directory.
 3. Optionally change the backend API endpoint (by default it is set to `mini-oracle.up.railway.app`).
-4. Run `./gradlew run` (or `.\gradlew.bat` run for Windows). Your bot must be up and running.
+4. Run `./gradlew run` (or `.\gradlew.bat run` for Windows). Your bot must be up and running.
