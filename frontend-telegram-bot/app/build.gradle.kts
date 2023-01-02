@@ -28,8 +28,8 @@ dependencies {
     implementation("io.ktor:ktor-client-cio:2.2.1")
 
     // Use the Ktor plugins for serialization.
-    implementation("io.ktor:ktor-client-content-negotiation:2.2.1")
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.2.1")
+    implementation("io.ktor:ktor-client-content-negotiation:2.2.1")
 
     // Use the Telegram bot API.
     implementation("io.github.kotlin-telegram-bot.kotlin-telegram-bot:telegram:6.0.7")
