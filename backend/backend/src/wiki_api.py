@@ -28,5 +28,4 @@ def get_wiki_search_results(query: str, session: Session) -> list[dict[str, str]
     titles = data[1]
     wiki = wikipediaapi.Wikipedia("en", headers=headers)
     pages = [wiki.page(x) for x in titles]
-
     return [{"title": x.title, "summary": x.summary[0:300]} for x in pages]
